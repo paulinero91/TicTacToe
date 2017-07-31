@@ -1,0 +1,89 @@
+*{
+	box-sizing: border-box;
+	/*font-family: 'Rajdhani', sans-serif;*/
+}
+
+h1{
+	color: #70C1B3;
+	font-size: 80px;
+	text-align: center;
+	margin: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 70vw;
+    height: 70vw;
+    table-layout: fixed;
+}
+
+td { 
+	border: 2px solid /*#BFC4CA*/ #70C1B3;
+	font-size: 80px;
+	text-align: center;
+	color: white;
+	width: 33%;
+	height: 33%;
+	border-radius: 50%;
+	background-color: #F7FAC2;
+	font-family: 'Poiret One', cursive;
+
+
+	transition: all .5s;
+
+
+	position: relative;
+
+
+	}
+
+td:hover{
+	background-color: #B2DBBF;
+}
+
+td:active{
+	background-color: yellow;
+}
+
+.o td:not(.clicked):hover::after{
+ 	content: "o"; 
+	color: green; 
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+	text-align: center;
+}
+
+.x td:not(.clicked):hover::after{
+ 	content: "x"; 
+	color: green; 
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+	text-align: center;
+}
+
+td.clicked{
+/*	background-color: red;*/
+}
+
+.div-button{
+	text-align: center;
+	margin: 15px;
+}
+
+button{
+	border: 2px solid #70C1B3;
+	background-color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	color: #70C1B3;
+}
+
+button:hover{
+	background-color: #B2DBBF;
+}
