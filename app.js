@@ -1,9 +1,12 @@
+(function($) {
+
+  var chuck = false
+
 $("td").click(function(e){     //function_td
   
   turnCount++
 
-
-  if(turnCount % 2 ==0){
+  if(turnCount % 2 ==0 && !chuck){
   	$(this).text("x");
     $(this).css("background-color", "#EB4F62");
     $('table').toggleClass("x o")
@@ -13,14 +16,38 @@ $("td").click(function(e){     //function_td
   	$(this).text("o");
     $(this).css("background-color", "#3C7B9C")
     $('table').toggleClass("o x")
+
+    // if (chuck){
+    //   $().text("x");
+    //   $().css("background-color", "#EB4F62");
+    //   $('table').toggleClass("x o")
+
+    //   turnCount++
+    // }
   }
   
   $(this).addClass('clicked')
 
   //check()
   isGameOver();
-  // e.stopPropagation();
+  
+  chuckNorris();
 });
+
+
+function chuckNorris(){
+  $.ajax({
+    type:'GET',
+    url:"https://api.chucknorris.io/jokes/random",  
+    success:function(d) {
+      console.log(d.value);
+
+       $('.chuck').text(d.value)
+    }
+
+
+  });
+}
 
 function isGameOver(){
     if(check('#1', '#2', '#3')){
@@ -54,44 +81,60 @@ function check(a,b,c){
   console.log(aletter, bletter,cletter)
 
   if (aletter == bletter && bletter == cletter && bletter != ""){
-    alert('YOU WIN')
+    // alert('YOU WIN')
 
-    $('td').text('') 
-    $('td').css("background-color", "#F7FAC2")
-    $('td').removeClass('clicked')
+    // $('td').text('') 
+    // $('td').css("background-color", "#F7FAC2")
+    // $('td').removeClass('clicked')
 
 
-    turnCount = 0
+    // turnCount = 0
 
     // '#'+Math.random().toString(16).substr(-6);
 
+     $("#NewGame").show()
     
     
     }
 
   else if (turnCount == 9){
-    alert('GAME OVER')
+    // alert('GAME OVER')
 
+    // $('td').text('')
+    // $('td').css("background-color", "#F7FAC2")
+    // $('td').removeClass('clicked')
+
+
+    // turnCount = 0;
+
+     $("#NewGame").show()
+  }
+
+
+}
+
+$("#NewGame button").click(
+
+  function(e){
     $('td').text('')
     $('td').css("background-color", "#F7FAC2")
     $('td').removeClass('clicked')
 
 
     turnCount = 0;
+
+    $("#NewGame").hide()
   }
+);
 
-
-}
-
-// $("#NewGame").click(function(e)){
-//     $('td').text('')
-//     $('td').css("background-color", "#F7FAC2")
-//     $('td').removeClass('clicked')
-
-
-//     turnCount = 0;
-// }
+//chuck norris
+// $("#playchuck").click(function(e){
+//   chuck = true;
+// })
 
 
 var turnCount = 0;
 
+ $("#NewGame").hide()
+
+ })(jQuery);

@@ -73,7 +73,20 @@ td.clicked{
 
 .div-button{
 	text-align: center;
-	margin: 15px;
+	margin: auto;
+	padding: 50px;
+	background-color: #F7FAC2;
+	border: 2px solid #70C1B3;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 40vw;
+	height: 40vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 button{
