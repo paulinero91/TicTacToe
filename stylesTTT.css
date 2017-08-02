@@ -14,14 +14,14 @@ h1{
 table{
 	margin-left: auto;
 	margin-right: auto;
-	width: 70vw;
-    height: 70vw;
-    table-layout: fixed;
+	width: 350px;
+	height:350px;
 }
 
 td { 
 	border: 2px solid /*#BFC4CA*/ #70C1B3;
-	font-size: 80px;
+	font-size: 74px;
+	vertical-align: top; 
 	text-align: center;
 	color: white;
 	width: 33%;
@@ -62,6 +62,7 @@ td:active{
 	color: green; 
 	position: absolute;
 	top: 0;
+
 	width: 100%;
 	left: 0;
 	text-align: center;
@@ -99,4 +100,20 @@ button{
 
 button:hover{
 	background-color: #B2DBBF;
+}
+
+#NewGame p {
+	font-family: 'Montserrat', sans-serif;
+	color: #70C1B3;
+	font-size: 50px;
+	position: absolute;
+        font-size: 30px;
+        top: 0;
+}
+
+
+.chuck{
+	color:#EB4F62;
+	font-family: 'Montserrat', sans-serif;
+
 }
