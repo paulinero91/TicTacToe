@@ -1,6 +1,9 @@
 $(function() {
 
 	var chuck = false
+	var turnCount = 0;
+	$("#NewGame").hide()
+
 
 	$("td").click(function(e){     
 		if( $(this).text() != "" ){  //Don't let the same TD get clicked again. 
@@ -27,6 +30,7 @@ $(function() {
 			$('table').toggleClass("o x")
 
 	 		if (chuck){
+				turnCount++				
 				chucksTurn(); 
 			}
 		}
@@ -102,7 +106,8 @@ $(function() {
 
 			$("#NewGame p").text('Tie game!')
 			$("#NewGame").show()
-
+			
+			return; 
 		}
 
 
@@ -114,14 +119,10 @@ $(function() {
 		$('td').css("background-color", "#F7FAC2")
 		$('td').removeClass('clicked')
 		turnCount = 0;
-
+		$('table').toggleClass("x o")
 		$("#NewGame").hide()
 	});
 
-
-	var turnCount = 0;
-
-	$("#NewGame").hide()
 
 
 
